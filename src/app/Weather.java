@@ -15,7 +15,10 @@ public class Weather {
 
         JsonObject weatherReport = Url.getJsonFromUrl(apiUrl);
 
-        System.out.print(weatherReport.get("main"));
+        System.out.println(weatherReport.get("main"));
+        System.out.println(weatherReport.toString());
+
+        String result = weatherReport.get("")
     }
 
 

@@ -18,7 +18,11 @@ public class Weather {
         System.out.println(weatherReport.get("main"));
         System.out.println(weatherReport.toString());
 
-        String result = weatherReport.get("")
+        JsonObject result = weatherReport.getAsJsonObject("weather");
+        System.out.println(result.toString());
+
+        String result2 = result.get("main").toString();
+        System.out.println(result2);
     }
 
 

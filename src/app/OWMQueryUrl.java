@@ -18,11 +18,14 @@ public class OWMQueryUrl {
             this.queryType = "weather";
         }
 
-        this.cityName = "?q=" + cityName;
-        this.units = "&units=" + units;
+        this.cityName =  cityName;
+        this.units =  units;
 
     }
 
+    public String getQueryType() {
+        return queryType;
+    }
 
     public String getUnits() {
         return units;
@@ -42,6 +45,6 @@ public class OWMQueryUrl {
 
 
     public String toString(){
-        return queryPrefix + this.queryType + this.cityName + this.units + apiKey;
+        return queryPrefix + this.queryType + "?q=" + this.cityName + "&units=" + this.units + apiKey;
     }
 }

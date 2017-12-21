@@ -18,10 +18,17 @@ public class FileIO {
         return lines.toArray(new String[lines.size()]);
     }
 
-    public static void writeToFile(String filename, String contents) throws FileNotFoundException, UnsupportedEncodingException {
-        PrintWriter writer = new PrintWriter(filename, "UTF-8");
+    public static void writeToFile(String filename, String contents) throws IOException {
+        PrintWriter writer = new PrintWriter(new FileWriter(new File(filename), true));
         writer.println(contents);
         writer.close();
+    }
+
+    public static void deleteFileIfExists(String filename){
+        File file = new File("output.txt");
+        if (file.exists()){
+            file.delete();
+        }
     }
 
 }

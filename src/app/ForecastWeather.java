@@ -14,14 +14,23 @@ public class ForecastWeather {
 
     private String cityName;
     private int nrOfDays;
-    private String[][] data;
+    private String[][] temps;
+    private double cityLatitude;
+    private double cityLongtitude;
+    private Result data;
 
     ForecastWeather(String cityName) throws IOException {
         this.cityName = cityName;
 
-        String[][] temps = getForecastTemps(cityName);
+        Result data =  getForecastData(cityName);
+        this.data = data;
 
-        this.data = temps;
+        String[][] temps = getForecastTemps(cityName, data);
+
+        this.cityLatitude = data.getCity().getCoord().getLat();
+        this.cityLongtitude = data.getCity().getCoord().getLon();
+
+        this.temps = temps;
         this.nrOfDays = temps.length;
 
     }
@@ -43,15 +52,15 @@ public class ForecastWeather {
     }
 
     private double getMaxTempOfDay(int dayNr){
-        return Double.valueOf(this.data[dayNr][MAX_TEMP_INDEX]);
+        return Double.valueOf(this.temps[dayNr][MAX_TEMP_INDEX]);
     }
 
     private double getMinTempOfDay(int dayNr){
-        return Double.valueOf(this.data[dayNr][MIN_TEMP_INDEX]);
+        return Double.valueOf(this.temps[dayNr][MIN_TEMP_INDEX]);
     }
 
     private String getDayDate(int dayNr){
-        return this.data[dayNr][DATE_INDEX];
+        return this.temps[dayNr][DATE_INDEX];
     }
 
     public String getCityName(){
@@ -60,16 +69,18 @@ public class ForecastWeather {
 
     public void setCityNameAndUpdateData(String cityName) throws IOException {
         this.cityName = cityName;
-        String[][] temps = getForecastTemps(cityName);
+        Result data =  getForecastData(cityName);
+        this.data = data;
 
-        this.data = temps;
+        String[][] temps = getForecastTemps(cityName, data);
+
+        this.temps = temps;
         this.nrOfDays = temps.length;
     }
 
-    private static String[][] getForecastTemps(String cityName) throws IOException {
+    private static String[][] getForecastTemps(String cityName, Result data) {
 
         String[][] temps = new String[DAYS][3];
-        Result data =  getForecastData(cityName);
 
         int i, j = 0;
         String currDay = data.getList().get(0).getDtTxt().split(" ")[0];

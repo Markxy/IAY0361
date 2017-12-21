@@ -10,7 +10,7 @@ import java.net.URL;
 
 public class Url {
     public static JsonObject getJsonFromUrl(String url) throws IOException{
-        JsonObject content = null;
+        JsonObject content;
         URL urlObj = new URL(url);
         HttpURLConnection request = (HttpURLConnection) urlObj.openConnection();
         request.connect();

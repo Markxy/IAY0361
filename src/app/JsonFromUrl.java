@@ -8,8 +8,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Url {
-    public static JsonObject getJsonFromUrl(String url) throws IOException{
+public class JsonFromUrl {
+    public static JsonObject get(String url) throws IOException{
         JsonObject content;
         URL urlObj = new URL(url);
         HttpURLConnection request = (HttpURLConnection) urlObj.openConnection();

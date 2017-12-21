@@ -1,6 +1,6 @@
 import java.util.Optional;
 
-public class Query {
+public class OWMQueryUrl {
 
     private String queryPrefix = "http://api.openweathermap.org/data/2.5/";
     public String isForecast;
@@ -10,7 +10,7 @@ public class Query {
     private String apiKey = "&APPID=384b79db758d750f0508627750c67c44";
 
 
-    Query(Boolean isForecast, String cityName, String units){
+    OWMQueryUrl(Boolean isForecast, String cityName, String units){
 
         if(isForecast){
             this.queryType = "forecast";
@@ -19,7 +19,7 @@ public class Query {
         }
 
         this.cityName = "?q=" + cityName;
-        this.units = "&" + "units=" + units;
+        this.units = "&units=" + units;
 
     }
 

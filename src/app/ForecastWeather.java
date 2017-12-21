@@ -29,7 +29,7 @@ public class ForecastWeather {
     public String getForecastAsString(){
         StringBuilder output = new StringBuilder();
         for(int i = 0; i < this.getNrOfDays(); i += 1){
-            output.append(getDayForecastAsString(i)).append("\n");
+            output.append(getDayForecastAsString(i)).append("\r\n");
         }
         return output.toString();
     }

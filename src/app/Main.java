@@ -12,7 +12,7 @@ public class Main {
         ForecastWeather fwth = new ForecastWeather(city);
         System.out.println(fwth.getForecastAsString());
 
-        FileIO.writeToFile("output.txt","Current temp is: " + CurrentWeather.getCurrentTemp(city) + fwth.getForecastAsString());
+        FileIO.writeToFile("output.txt","Current temp is: " + CurrentWeather.getCurrentTemp(city) + "\r\n" + fwth.getForecastAsString());
 
 
     }

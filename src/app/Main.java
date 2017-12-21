@@ -20,7 +20,7 @@ public class Main {
 
         for (String city : cities) {
             ForecastWeather fwth = new ForecastWeather(city);
-            FileIO.writeToFile("output.txt", "City: " + fwth.getCityName() + "\r\n" + "Lat: " + fwth.getCityLatitude() + " Lon: " + fwth.getCityLongtitude() + "\r\n" + "Current temp is: " + CurrentWeather.getCurrentTemp(city) + "\r\n" + fwth.getForecastAsString());
+            FileIO.writeToFile("output.txt", "City: " + fwth.getCityName() + "\r\n" + fwth.getLatLngAsString() + "\r\n" + "Current temp is: " + CurrentWeather.getCurrentTemp(city) + "\r\n" + fwth.getForecastAsString());
         }
 
 

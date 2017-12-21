@@ -1,24 +1,28 @@
 City: Tallinn
+Lat: 59.4372 Lon: 24.7454
 Current temp is: 3.0
 Day: 2017-12-21 - min Temp: -0.08 max Temp: 3.11
 Day: 2017-12-22 - min Temp: -0.23 max Temp: 2.08
 Day: 2017-12-23 - min Temp: -0.71 max Temp: 4.47
 
 City: Paris
+Lat: 48.8566 Lon: 2.3515
 Current temp is: 8.37
-Day: 2017-12-21 - min Temp: 0.0 max Temp: 10.08
-Day: 2017-12-22 - min Temp: 0.0 max Temp: 9.97
-Day: 2017-12-23 - min Temp: 0.0 max Temp: 9.2
+Day: 2017-12-21 - min Temp: 7.34 max Temp: 10.08
+Day: 2017-12-22 - min Temp: 8.04 max Temp: 9.97
+Day: 2017-12-23 - min Temp: 7.14 max Temp: 9.2
 
 City: Tokyo
+Lat: 35.6828 Lon: 139.759
 Current temp is: 9.61
-Day: 2017-12-21 - min Temp: 0.0 max Temp: 9.0
-Day: 2017-12-22 - min Temp: 0.0 max Temp: 8.55
-Day: 2017-12-23 - min Temp: 0.0 max Temp: 11.09
+Day: 2017-12-21 - min Temp: 3.11 max Temp: 9.01
+Day: 2017-12-22 - min Temp: 0.69 max Temp: 8.55
+Day: 2017-12-23 - min Temp: 2.8 max Temp: 11.09
 
 City: Milan
-Current temp is: -4.6
-Day: 2017-12-21 - min Temp: -4.63 max Temp: 3.45
+Lat: 45.4668 Lon: 9.1905
+Current temp is: -4.59
+Day: 2017-12-21 - min Temp: -4.63 max Temp: 3.46
 Day: 2017-12-22 - min Temp: -6.18 max Temp: 2.22
 Day: 2017-12-23 - min Temp: -5.74 max Temp: 5.08
 

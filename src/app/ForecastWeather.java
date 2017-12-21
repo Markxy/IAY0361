@@ -36,6 +36,10 @@ public class ForecastWeather {
 
     }
 
+    public String getLatLngAsString(){
+        return "Lat: " + this.getCityLatitude() + " Lon: " + getCityLongitude();
+    }
+
     public String getForecastAsString(){
         StringBuilder output = new StringBuilder();
         for(int i = 0; i < this.getNrOfDays(); i += 1){
@@ -52,7 +56,7 @@ public class ForecastWeather {
         return this.cityLatitude;
     }
 
-    public double getCityLongtitude() {
+    private double getCityLongitude() {
         return this.cityLongtitude;
     }
 

@@ -19,6 +19,7 @@ public class ForecastWeather {
     private double cityLongtitude;
     private Result data;
 
+
     ForecastWeather(String cityName) throws IOException {
         this.cityName = cityName;
 
@@ -47,6 +48,14 @@ public class ForecastWeather {
         return "Day: " + this.getDayDate(dayNr) + " - min Temp: " + this.getMinTempOfDay(dayNr) + " max Temp: " + this.getMaxTempOfDay(dayNr);
     }
 
+    public double getCityLatitude() {
+        return this.cityLatitude;
+    }
+
+    public double getCityLongtitude() {
+        return this.cityLongtitude;
+    }
+
     private int getNrOfDays() {
         return this.nrOfDays;
     }
@@ -72,6 +81,10 @@ public class ForecastWeather {
         Result data =  getForecastData(cityName);
         this.data = data;
 
+        this.cityLatitude = data.getCity().getCoord().getLat();
+        this.cityLongtitude = data.getCity().getCoord().getLon();
+
+
         String[][] temps = getForecastTemps(cityName, data);
 
         this.temps = temps;
@@ -82,9 +95,9 @@ public class ForecastWeather {
 
         String[][] temps = new String[DAYS][3];
 
-        int i, j = 0;
+        int i = 0, j = 0;
         String currDay = data.getList().get(0).getDtTxt().split(" ")[0];
-        double maxTemp = 0, minTemp = 0;
+        double maxTemp = data.getList().get(i).getMain().getTempMax(), minTemp = data.getList().get(i).getMain().getTempMin();
         for(i = 0; i < data.getList().size(); i += 1){
             if(!Objects.equals(data.getList().get(i).getDtTxt().split(" ")[0], currDay)){
                 temps[j][MIN_TEMP_INDEX] = String.valueOf(minTemp);
@@ -95,8 +108,8 @@ public class ForecastWeather {
                 if(j >= DAYS){
                     break;
                 } else {
-                    minTemp = 0;
-                    maxTemp = 0;
+                    minTemp = data.getList().get(i).getMain().getTempMin();
+                    maxTemp = data.getList().get(i).getMain().getTempMax();
                     currDay = data.getList().get(i).getDtTxt().split(" ")[0];
                 }
             }

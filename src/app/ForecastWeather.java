@@ -1,7 +1,6 @@
 import ForecastWeatherData.Result;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import org.junit.jupiter.api.Assertions;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -13,7 +12,61 @@ public class ForecastWeather {
     private static final int MAX_TEMP_INDEX = 2;
     private static final int DATE_INDEX = 0;
 
-    public static String[][] getForecastTemps(String cityName) throws IOException {
+    private String cityName;
+    private int nrOfDays;
+    private String[][] data;
+
+    ForecastWeather(String cityName) throws IOException {
+        this.cityName = cityName;
+
+        String[][] temps = getForecastTemps(cityName);
+
+        this.data = temps;
+        this.nrOfDays = temps.length;
+
+    }
+
+    public String getForecastAsString(){
+        StringBuilder output = new StringBuilder();
+        for(int i = 0; i < this.getNrOfDays(); i += 1){
+            output.append(getDayForecastAsString(i)).append("\n");
+        }
+        return output.toString();
+    }
+
+    private String getDayForecastAsString(int dayNr){
+        return "Day: " + this.getDayDate(dayNr) + " - min Temp: " + this.getMinTempOfDay(dayNr) + " max Temp: " + this.getMaxTempOfDay(dayNr);
+    }
+
+    private int getNrOfDays() {
+        return this.nrOfDays;
+    }
+
+    private double getMaxTempOfDay(int dayNr){
+        return Double.valueOf(this.data[dayNr][MAX_TEMP_INDEX]);
+    }
+
+    private double getMinTempOfDay(int dayNr){
+        return Double.valueOf(this.data[dayNr][MIN_TEMP_INDEX]);
+    }
+
+    private String getDayDate(int dayNr){
+        return this.data[dayNr][DATE_INDEX];
+    }
+
+    public String getCityName(){
+        return this.cityName;
+    }
+
+    public void setCityNameAndUpdateData(String cityName) throws IOException {
+        this.cityName = cityName;
+        String[][] temps = getForecastTemps(cityName);
+
+        this.data = temps;
+        this.nrOfDays = temps.length;
+    }
+
+    private static String[][] getForecastTemps(String cityName) throws IOException {
 
         String[][] temps = new String[DAYS][3];
         Result data =  getForecastData(cityName);

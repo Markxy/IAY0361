@@ -6,16 +6,13 @@ public class Main {
 
     public static void main(String args[]) throws IOException{
 
-        System.out.println("Current temp is: " + CurrentWeather.getCurrentTemp("Tallinn"));
+        String city = FileIO.readFile("input.txt")[0];
 
-        int days = 3;
+        System.out.println("Current temp is: " + CurrentWeather.getCurrentTemp(city));
+        ForecastWeather fwth = new ForecastWeather(city);
+        System.out.println(fwth.getForecastAsString());
 
-        String[][] temps = ForecastWeather.getForecastTemps("Tallinn");
-        for (String[] temp : temps) {
-            System.out.println("Day - " + temp[0] + " - min temp: " + temp[1] + ", max temp: " + temp[2]);
-        }
-
-
+        FileIO.writeToFile("output.txt","Current temp is: " + CurrentWeather.getCurrentTemp(city) + fwth.getForecastAsString());
 
 
     }

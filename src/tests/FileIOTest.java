@@ -16,7 +16,6 @@ import java.io.IOException;
 import static org.junit.Assert.*;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class FileIOTest {
 
@@ -24,7 +23,6 @@ public class FileIOTest {
 
     @Before
     public void setUp() {
-        Result result = mock(Result.class);
     }
 
     @After
@@ -38,9 +36,4 @@ public class FileIOTest {
 
     }
 
-    @Test
-    public void writeToFile() {
-        Result result = mock(Result.class);
-        when(result.getList().size() > 29).thenThrow(Exception.class);
-    }
 }

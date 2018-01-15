@@ -25,10 +25,9 @@ public class FileIO {
     }
 
     public static void deleteFileIfExists(String filename){
-        File file = new File("output.txt");
-        if (file.exists()){
+        File file = new File(filename);
+        if (file.exists()) //noinspection ResultOfMethodCallIgnored
             file.delete();
-        }
     }
 
 }

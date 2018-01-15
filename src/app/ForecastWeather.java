@@ -16,7 +16,7 @@ public class ForecastWeather {
     private int nrOfDays;
     private String[][] temps;
     private double cityLatitude;
-    private double cityLongtitude;
+    private double cityLongitude;
     private Result data;
 
 
@@ -29,7 +29,7 @@ public class ForecastWeather {
         String[][] temps = getForecastTemps(cityName, data);
 
         this.cityLatitude = data.getCity().getCoord().getLat();
-        this.cityLongtitude = data.getCity().getCoord().getLon();
+        this.cityLongitude = data.getCity().getCoord().getLon();
 
         this.temps = temps;
         this.nrOfDays = temps.length;
@@ -37,7 +37,7 @@ public class ForecastWeather {
     }
 
     public String getLatLngAsString(){
-        return "Lat: " + this.getCityLatitude() + " Lon: " + getCityLongitude();
+        return "Lat: " + this.getCityLatitude() + " Lon: " + this.getCityLongitude();
     }
 
     public String getForecastAsString(){
@@ -56,8 +56,8 @@ public class ForecastWeather {
         return this.cityLatitude;
     }
 
-    private double getCityLongitude() {
-        return this.cityLongtitude;
+    double getCityLongitude() {
+        return this.cityLongitude;
     }
 
     private int getNrOfDays() {
@@ -86,7 +86,7 @@ public class ForecastWeather {
         this.data = data;
 
         this.cityLatitude = data.getCity().getCoord().getLat();
-        this.cityLongtitude = data.getCity().getCoord().getLon();
+        this.cityLongitude = data.getCity().getCoord().getLon();
 
 
         String[][] temps = getForecastTemps(cityName, data);

@@ -1,28 +1,28 @@
 City: Tallinn
 Lat: 59.4372 Lon: 24.7454
-Current temp is: 4.0
-Day: 2017-12-21 - min Temp: 0.03 max Temp: 3.33
-Day: 2017-12-22 - min Temp: -0.32 max Temp: 2.0
-Day: 2017-12-23 - min Temp: -1.6 max Temp: 3.85
+Current temp is: -9.0
+Day: 2018-01-15 - min Temp: -10.45 max Temp: -9.76
+Day: 2018-01-16 - min Temp: -11.16 max Temp: -8.1
+Day: 2018-01-17 - min Temp: -11.68 max Temp: -5.75
 
 City: Paris
 Lat: 48.8566 Lon: 2.3515
-Current temp is: 9.0
-Day: 2017-12-21 - min Temp: 8.47 max Temp: 10.88
-Day: 2017-12-22 - min Temp: 5.37 max Temp: 9.35
-Day: 2017-12-23 - min Temp: 2.23 max Temp: 8.65
+Current temp is: 9.59
+Day: 2018-01-15 - min Temp: 9.75 max Temp: 9.99
+Day: 2018-01-16 - min Temp: 7.0 max Temp: 9.5
+Day: 2018-01-17 - min Temp: 4.82 max Temp: 6.95
 
 City: Tokyo
 Lat: 35.6828 Lon: 139.759
-Current temp is: 7.01
-Day: 2017-12-21 - min Temp: 3.04 max Temp: 5.54
-Day: 2017-12-22 - min Temp: 1.62 max Temp: 8.29
-Day: 2017-12-23 - min Temp: 2.28 max Temp: 10.51
+Current temp is: 0.98
+Day: 2018-01-15 - min Temp: 0.27 max Temp: 2.68
+Day: 2018-01-16 - min Temp: 3.8 max Temp: 12.77
+Day: 2018-01-17 - min Temp: 7.43 max Temp: 15.73
 
 City: Milan
 Lat: 45.4668 Lon: 9.1905
-Current temp is: -0.43
-Day: 2017-12-21 - min Temp: -3.39 max Temp: 4.31
-Day: 2017-12-22 - min Temp: -6.31 max Temp: 1.3
-Day: 2017-12-23 - min Temp: -5.67 max Temp: 5.55
+Current temp is: 4.2
+Day: 2018-01-15 - min Temp: 1.38 max Temp: 3.16
+Day: 2018-01-16 - min Temp: -1.26 max Temp: 4.48
+Day: 2018-01-17 - min Temp: -2.88 max Temp: 9.6
 

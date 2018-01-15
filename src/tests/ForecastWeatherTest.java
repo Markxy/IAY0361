@@ -1,7 +1,12 @@
+import ForecastWeatherData.Result;
 import org.junit.Test;
+import org.junit.Rule;
 import org.junit.jupiter.api.Assertions;
 import org.mockito.Mock;
 import org.mockito.Mockito.*;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+
 import java.io.IOException;
 
 import static org.junit.Assert.*;
@@ -33,5 +38,6 @@ public class ForecastWeatherTest {
             e.printStackTrace();
         }
     }
+
 
 }
